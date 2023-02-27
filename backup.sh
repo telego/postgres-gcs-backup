@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "Starting backup archive to GCS bucket"
+
 set -o pipefail
 set -o errexit
 set -o errtrace
@@ -21,6 +23,8 @@ SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL:-}
 SLACK_CHANNEL=${SLACK_CHANNEL:-}
 SLACK_USERNAME=${SLACK_USERNAME:-}
 SLACK_ICON=${SLACK_ICON:-}
+
+echo "bucket: $GCS_BUCKET key: $GCS_KEY_FILE_PATH"
 
 backup() {
   mkdir -p $BACKUP_DIR

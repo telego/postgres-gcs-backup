@@ -96,3 +96,6 @@ To use the resulting JSON key file within Kubernetes you can create a secret fro
       --from-file=credentials.json=/path/to/your/key.json
 
 Then you will need to specify this secret name via the `--set secretName=<your_secret_name>` argument to the `helm install` command or by specifying it directly in your `values.yaml` file (by default, the secret name is set to `postgres-gcs-backup`). The key file will be mounted by default under `/secrets/gcp/credentials.json` and the `GCS_KEY_FILE_PATH` variable should point to it.
+
+
+docker build -t gcr.io/bo-farm/postgres-gcs-backup:0.1.3 .
