@@ -1,4 +1,4 @@
-FROM python:alpine3.20
+FROM python:3.11-alpine
 
 RUN apk add --update \
   bash \
